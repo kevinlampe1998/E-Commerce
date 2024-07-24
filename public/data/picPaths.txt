@@ -1,0 +1,74 @@
+{
+    "cars": [
+        "bmw-1.jpg",
+        "bmw-z4.jpg",
+        "camaro-1.jpg",
+        "ferrari.jpg",
+        "maserati.jpg",
+        "mercedes-300sl.jpg",
+        "mercedes.jpg",
+        "mustang.jpg",
+        "suzuki-1.jpg",
+        "volkswagen.jpg"
+    ],
+    "electronics": [
+        "apple-pc.jpg",
+        "ear-buds.jpg",
+        "i-pad.jpg",
+        "i-phone-2.jpg",
+        "i-phone.jpg",
+        "mac-book.jpg",
+        "pc-mouse.jpg",
+        "samsung-phone.jpg",
+        "television.jpg",
+        "watch.jpg"
+    ],
+    "clothes": [
+        "dress-1.jpg",
+        "hemd-2.jpg",
+        "hemd-unique.jpg",
+        "hemd.jpg",
+        "jeans-2.jpg",
+        "jeans.jpg",
+        "shirt-2.jpg",
+        "shirt.jpg",
+        "suit-1.jpg",
+        "summer-dress.jpg"
+    ],
+    "houseAndGarden": [
+        "drilling-machine.jpg",
+        "fountain.jpg",
+        "garden-chair.jpg",
+        "garden-hose.jpg",
+        "grill.jpg",
+        "house-garden.jpg",
+        "mowing-machine.jpg",
+        "pool.jpg",
+        "solar-panel.jpg",
+        "tractor.jpg"
+    ],
+    "familyAndFriends": [
+        "barbie.jpg",
+        "bikes.jpg",
+        "bracelet.jpg",
+        "jewelry-pair.jpg",
+        "lego-set.jpg",
+        "necklace.jpg",
+        "soccer.jpg",
+        "teddy.jpg",
+        "tennis-set.jpg",
+        "toy-chair.jpg"
+    ],
+    "business": [
+        "business-shoes.jpg",
+        "office-chair.jpg",
+        "office-set.jpg",
+        "suit-1.jpg",
+        "suit-2.jpg",
+        "suit-3.jpg",
+        "suit-4.jpg",
+        "suit-5.jpg",
+        "watch-2.jpg",
+        "watch.jpg"
+    ]
+}

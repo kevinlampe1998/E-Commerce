@@ -1,24 +1,30 @@
 import './App.css'
 import { BrowserRouter, Routes, Route , Link, Outlet} from 'react-router-dom';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useReducer, createContext } from 'react';
 import Home from './components/Home';
+
+const reducer = (state, action) => {
+  if (action.type === "init") {
+    let copyObj = action.payload;
+    let all = []
+    // console.log("copyObj: ", copyObj);
+
+    for (let cat in copyObj) {
+      copyObj[cat].forEach(item => all.push(`/images/${cat}/${item}`));
+    }
+
+    // console.log("all: ", all);
+
+    return {...state, categorized: action.payload, all: all};
+  }
+};
+
+export const TheContext = createContext();
 
 const Layout = () => {
   const productsNav = useRef(null);
 
-  useEffect(() => {
-    try {
-      const fetchData = async () => {
-        const response = await fetch("/data/picPaths.txt");
-        let data =  await response.text();
-        data = JSON.parse(data);
-        console.log(data);
-      }
-      fetchData();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+
 
   const showProductsNav = () => {
     const currentTop = window.getComputedStyle(productsNav.current).getPropertyValue("top");
@@ -30,7 +36,7 @@ const Layout = () => {
     <div className='layout'>
       <h1>E-Commerce</h1>
       <nav className='main-nav'>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link onClick={showProductsNav}>Products</Link>
         <Link>About</Link>
         <Link>Contact</Link>
@@ -66,15 +72,41 @@ const Layout = () => {
 };
 
 function App() {
+  const [picPaths, dispatch] = useReducer(reducer, 
+    // {
+    // categorized: {},
+    // all: {}
+    // }
+  );
+  
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const response = await fetch("/data/picPaths.txt");
+        let data =  await response.text();
+        data = JSON.parse(data);
+        dispatch({type: "init", payload: data});
+      }
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+    useEffect(() => {
+      // console.log("picPaths: ", picPaths);
+    }, [picPaths]);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <TheContext.Provider value={{picPaths, dispatch}} >
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </TheContext.Provider>
   )
 }
 

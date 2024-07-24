@@ -68,5 +68,37 @@ body {
 
 main {
     position: relative;
-    top: -120px;
+    top: -150px;
+}
+
+/* ------- home -------------------------- */
+
+.advertisement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: #08f;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.advertisement > * {
+    padding: 10px;
+}
+
+.advertisement h2 {
+    align-self: flex-start;
+    padding-left: 20px;
+}
+
+.advertisement h3 {
+    padding-right: 20px;
+}
+
+.advertisement img {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+    border-radius: 20px;
 }
