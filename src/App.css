@@ -68,10 +68,14 @@ body {
 
 main {
     position: relative;
-    top: -150px;
+    top: -100px;
 }
 
 /* ------- home -------------------------- */
+
+.home {
+    overflow-x: hidden;
+}
 
 .advertisement {
     display: flex;
@@ -80,6 +84,11 @@ main {
     background: #08f;
     margin: 10px;
     border-radius: 30px;
+    margin-top: 20px;
+}
+
+.advertisement > div {
+    width: 100%;
 }
 
 .advertisement > * {
@@ -89,10 +98,12 @@ main {
 .advertisement h2 {
     align-self: flex-start;
     padding-left: 20px;
+    padding-top: 20px;
 }
 
 .advertisement h3 {
-    padding-right: 20px;
+    padding-left: 50px;
+    padding-top: 20px;
 }
 
 .advertisement img {
@@ -100,7 +111,166 @@ main {
     height: 150px;
     width: 150px;
     margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.advertisement-2 {
+    width: 1000px;
+    position: relative;
+    animation: advert2 10s infinite alternate;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes advert2 {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+.advertisement-2 > div {
+    height: 100%;
+    width: 100%;
+    background: #08f;
+    z-index: -10;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.advertisement-2 img {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.advertisement-bottom {
+    margin-top: 40px;
+    background: #08f;
+    display: flex;
+    align-items: center;
+}
+
+.advertisement-bottom > div > * {
+    padding: 5px;
+}
+
+.advertisement-bottom img {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
     border-radius: 20px;
+    object-fit: cover;
+}
+
+/* ------- cars -------------------------- */
+
+.car-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.cars img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/* ------- electronics -------------------------- */
+
+.electronic-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.electronics img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/* ------- clothes -------------------------- */
+
+.clothe-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.clothes img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/* ------- house and garden -------------------------- */
+
+.house-and-garden-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.house-and-garden img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/* ------- family and friends -------------------------- */
+
+.family-and-friends-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.family-and-friends img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+/* ------- business -------------------------- */
+
+.business-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.business img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
 }
 
 /* ------- footer -------------------------- */

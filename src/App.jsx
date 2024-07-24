@@ -2,22 +2,30 @@ import './App.css'
 import { BrowserRouter, Routes, Route , Link, Outlet} from 'react-router-dom';
 import { useRef, useEffect, useReducer, createContext } from 'react';
 import Home from './components/Home';
+import Cars from './components/products/Cars';
+import Electronics from './components/products/Electronics';
+import Clothes from './components/products/Clothes';
+import HouseAndGarden from './components/products/HouseAndGarden';
+import FamilyAndFriends from './components/products/FamilyAndFriends';
+import Business from './components/products/Business';
 import Footer from './components/Footer';
 
 const reducer = (state, action) => {
   if (action.type === "init") {
     let copyObj = action.payload;
     let all = []
-    // console.log("copyObj: ", copyObj);
 
     for (let cat in copyObj) {
       copyObj[cat].forEach(item => all.push(`/images/${cat}/${item}`));
     }
 
-    // console.log("all: ", all);
-
     return {...state, categorized: action.payload, all: all};
   }
+  if (action.type === "advert") {
+    // console.log('reducer got it');
+    // console.log(action.payload);
+  }
+  return state;
 };
 
 export const TheContext = createContext();
@@ -25,23 +33,25 @@ export const TheContext = createContext();
 const Layout = () => {
   const productsNav = useRef(null);
 
-
-
   const showProductsNav = () => {
     const currentTop = window.getComputedStyle(productsNav.current).getPropertyValue("top");
     currentTop === "0px" ? productsNav.current.style.top = "-160px"
       : productsNav.current.style.top = "0";
   };
 
+  const setNavBack = () => {
+    productsNav.current.style.top = '-160px';
+  };
+
   return (
-    <div className='layout'>
+    <div className='layout' >
       <h1>LK-Commerce</h1>
       <nav className='main-nav'>
-        <Link to="/">Home</Link>
+        <Link onClick={setNavBack} to="/">Home</Link>
         <Link onClick={showProductsNav}>Products</Link>
-        <Link>About</Link>
-        <Link>Contact</Link>
-        <Link>Login</Link>
+        <Link onClick={setNavBack}>About</Link>
+        <Link onClick={setNavBack}>Contact</Link>
+        <Link onClick={setNavBack}>Login</Link>
         <Link>
         <svg className='shopping-cart-logo' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 3H4.37144C5.31982 3 6.13781 3.66607 6.32996 4.59479L8.67004 15.9052C8.86219 16.8339 9.68018 17.5 10.6286 17.5H17.5" stroke="#000000"
@@ -59,13 +69,13 @@ const Layout = () => {
         </svg>
         </Link>
       </nav>
-      <nav className='products-nav' ref={productsNav}>
-        <Link>Cars</Link>
-        <Link>Electronics</Link>
-        <Link>Clothes</Link>
-        <Link>House & Garden</Link>
-        <Link>Family & Friends</Link>
-        <Link>Business</Link>
+      <nav className='products-nav' ref={productsNav} onClick={setNavBack}>
+        <Link to='/cars' >Cars</Link>
+        <Link to='/electronics' >Electronics</Link>
+        <Link to='/clothes' >Clothes</Link>
+        <Link to='/house-and-garden' >House & Garden</Link>
+        <Link to='/family-and-friends' >Family & Friends</Link>
+        <Link to='/business' >Business</Link>
       </nav>
       <Outlet/>
       <Footer />
@@ -74,12 +84,7 @@ const Layout = () => {
 };
 
 function App() {
-  const [picPaths, dispatch] = useReducer(reducer, 
-    // {
-    // categorized: {},
-    // all: {}
-    // }
-  );
+  const [picPaths, dispatch] = useReducer(reducer, {});
   
   useEffect(() => {
     try {
@@ -95,16 +100,18 @@ function App() {
     }
   }, []);
 
-    useEffect(() => {
-      // console.log("picPaths: ", picPaths);
-    }, [picPaths]);
-
   return (
-    <TheContext.Provider value={{picPaths, dispatch}} >
+    <TheContext.Provider value={{picPaths, dispatch }} >
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />}/>
+            <Route path='/cars' element={<Cars />}/>
+            <Route path='/electronics' element={<Electronics />}/>
+            <Route path='/clothes' element={<Clothes />}/>
+            <Route path='/house-and-garden' element={<HouseAndGarden />}/>
+            <Route path='/family-and-friends' element={<FamilyAndFriends />}/>
+            <Route path='/business' element={<Business />}/>
           </Route>
         </Routes>
       </BrowserRouter>
