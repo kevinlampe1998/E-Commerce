@@ -102,3 +102,34 @@ main {
     margin-right: 20px;
     border-radius: 20px;
 }
+
+/* ------- footer -------------------------- */
+
+footer {
+    background: #222;
+    padding: 20px;
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+footer section > * {
+    padding: 5px;
+}
+
+footer h6 {
+    color: #444;
+    font-size: 1rem;
+}
+
+footer a:hover,
+footer a:link,
+footer a:active,
+footer a:visited {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
+}

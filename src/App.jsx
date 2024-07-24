@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route , Link, Outlet} from 'react-router-dom';
 import { useRef, useEffect, useReducer, createContext } from 'react';
 import Home from './components/Home';
+import Footer from './components/Footer';
 
 const reducer = (state, action) => {
   if (action.type === "init") {
@@ -34,7 +35,7 @@ const Layout = () => {
 
   return (
     <div className='layout'>
-      <h1>E-Commerce</h1>
+      <h1>LK-Commerce</h1>
       <nav className='main-nav'>
         <Link to="/">Home</Link>
         <Link onClick={showProductsNav}>Products</Link>
@@ -67,6 +68,7 @@ const Layout = () => {
         <Link>Business</Link>
       </nav>
       <Outlet/>
+      <Footer />
     </div>
   );
 };
