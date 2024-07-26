@@ -11,7 +11,7 @@ body {
 }
 
 .layout h1 {
-    padding: 10px;
+    padding: 20px;
     font-style: italic;
     color: white;
     background: #000;
@@ -136,6 +136,7 @@ main {
 }
 
 .advertisement-2 > div {
+    border-radius: 30px;
     height: 100%;
     width: 100%;
     background: #08f;
@@ -302,4 +303,37 @@ footer a:visited {
     color: #444;
     text-decoration: none;
     font-size: 0.8rem;
+}
+
+/* ------- footer -------------------------- */
+
+@media screen and (min-width: 600px) {
+    .layout h1 {
+        padding: 20px;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .products-nav {
+        padding: 20px;
+        justify-content: flex-start;
+    }
+
+    main {
+        top: 50;
+    }
+
+    .advertisement-2 {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        /* position: relative; */
+        top: -30px;
+    }
 }
