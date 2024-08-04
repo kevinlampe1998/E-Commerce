@@ -30,6 +30,7 @@ const Home = () => {
 
     return (
         <main className="home" >
+            <div>
                 {
                     picPaths && ranNum && letters &&
 
@@ -49,9 +50,11 @@ const Home = () => {
                         <img src={picPaths.all[ranNum]} alt={picPaths.all[ranNum]} />
                     </section>
                 }
+                </div>
 
+                <div>
                 {
-                    picPaths && ranNum &&
+                    picPaths && picPaths.all && ranNum &&
 
                     Array(5).fill(1).map(() => 
                         Math.round(Math.random() * picPaths.all.length - 1))
@@ -66,6 +69,7 @@ const Home = () => {
                         </section>
                     ))
                 }
+                </div>
 
         </main>
     );
