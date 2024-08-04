@@ -21,7 +21,7 @@ body {
 
 .main-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     background: #0cf;
     flex-wrap: wrap;
     padding: 5px;
@@ -71,10 +71,68 @@ main {
     top: -100px;
 }
 
+/* ------- products all categories -------------------------- */
+
+.card-container {
+    background: #09f;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80vw;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5%;
+}
+
+.card-container h3 {
+    padding-top: 20px;
+}
+
+.card-container p {
+    padding-top: 30px;
+}
+
+.card-container img {
+    height: 15 0px;
+    width: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+.car-products,
+.electronic-products,
+.clothe-products,
+.house-and-garden-products,
+.family-and-friends-products,
+.business-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.cars,
+.electronics,
+.clothes,
+.house-and-garden,
+.family-and-friends,
+.business {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* ------- home -------------------------- */
 
 .home {
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .advertisement {
@@ -82,9 +140,10 @@ main {
     flex-direction: column;
     align-items: flex-end;
     background: #08f;
-    margin: 10px;
+    margin: 5%;
     border-radius: 30px;
     margin-top: 20px;
+    width: 90%;
 }
 
 .advertisement > div {
@@ -99,6 +158,7 @@ main {
     align-self: flex-start;
     padding-left: 20px;
     padding-top: 20px;
+    border-bottom: 5px solid #07f;
 }
 
 .advertisement h3 {
@@ -115,49 +175,14 @@ main {
     border-radius: 30px;
 }
 
-.advertisement-2 {
-    width: 1000px;
-    position: relative;
-    animation: advert2 10s infinite alternate;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-}
-
-@keyframes advert2 {
-    from {
-        left: -200px;
-    }
-    to {
-        left: 0;
-    }
-}
-
-.advertisement-2 > div {
-    border-radius: 30px;
-    height: 100%;
-    width: 100%;
-    background: #08f;
-    z-index: -10;
-    position: absolute;
-    opacity: 0.5;
-}
-
-.advertisement-2 img {
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-    border-radius: 30px;
-    object-fit: cover;
-}
-
 .advertisement-bottom {
     margin-top: 40px;
     background: #08f;
     display: flex;
     align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 20px;
 }
 
 .advertisement-bottom > div > * {
@@ -172,107 +197,123 @@ main {
     object-fit: cover;
 }
 
-/* ------- cars -------------------------- */
+/* ------- about -------------------------- */
 
-.car-products {
+.about {
+    padding: 30px 10%;
+}
+
+.about p {
+    padding-bottom: 30px;
+}
+
+/* ------- contact & login -------------------------- */
+
+.contact, .login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    margin-top: 30px;
 }
 
-.cars img {
-    height: 200px;
+.contact h2, .login h2, .about h2, .shopping-cart h2, h2 {
+    padding: 10px 40px;
+    margin: 30px;
+    border-bottom: 5px solid #09f;
+}
+
+.contact form, .login form {
+    text-align: center;
+}
+
+.contact div, .login div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea, .contact button, .login input, .login button {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 80vw;
+    max-width: 500px;
+}
+
+.contact textarea {
+    height: 100px;
+}
+
+.contact button, .login button {
+    background: #08f;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ------- about -------------------------- */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h2 {
+    margin-bottom: 80px;
+}
+
+.about p {
+    font-size: 1rem;
+}
+
+/* ------- shopping cart -------------------------- */
+
+.shopping-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shopping-item {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    margin: 20px;
+    background: #09f;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 20px;
+}
+
+.shopping-item div > * {
+    margin-bottom: 10px;
+}
+
+.shopping-item img {
     width: 200px;
     border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
 }
+
+.buy-button {
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+/* ------- cars -------------------------- */
 
 /* ------- electronics -------------------------- */
 
-.electronic-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.electronics img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
-}
-
 /* ------- clothes -------------------------- */
-
-.clothe-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.clothes img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
-}
 
 /* ------- house and garden -------------------------- */
 
-.house-and-garden-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.house-and-garden img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
-}
-
 /* ------- family and friends -------------------------- */
 
-.family-and-friends-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.family-and-friends img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
-}
-
 /* ------- business -------------------------- */
-
-.business-products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.business img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    object-fit: cover;
-    margin: 20px;
-}
 
 /* ------- footer -------------------------- */
 
@@ -322,18 +363,87 @@ footer a:visited {
         justify-content: flex-start;
     }
 
-    main {
-        top: 50;
+    .home {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .advertisement img {
+        height: 200px;
+        width: 200px;
     }
 
-    .advertisement-2 {
-        justify-content: center;
+    .card-container {
+        gap: 15%;
+    }
+
+    .shopping-cart {
+        margin-top: 40px;
     }
 }
 
 @media screen and (min-width: 800px) {
-    main {
-        /* position: relative; */
+    /* main {
         top: -30px;
+    } */
+
+    .advertisement {
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+
+    .card-container img {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .layout h1 {
+        padding: 40px;
+    }
+    
+    .main-nav>a:hover,
+    .main-nav>a:active,
+    .main-nav>a:link,
+    .main-nav>a:visited,
+    .products-nav>a:hover,
+    .products-nav>a:active,
+    .products-nav>a:link,
+    .products-nav>a:visited {
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-size: 1.1rem;
+    }
+
+    .card-container img {
+        width: 300px;
+    }
+
+    .advertisement {
+        padding: 70px 100px;
+    }
+
+    .advertisement img {
+        margin-right: 200px;
+        height: 300px;
+        width: 300px;
+    }
+
+    .advertisement-bottom {
+        justify-content: center;
+        gap: 20%;
+        padding: 40px;
+    }
+
+    .advertisement-bottom img {
+        height: 150px;
+        width: 150px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 100px;
     }
 }

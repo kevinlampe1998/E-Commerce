@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { TheContext } from "../App";
 
-const randomNumFunc = (array) => {
+export const randomNumFunc = (array) => {
     return Math.round(Math.random() * array.length);
 };
 
@@ -50,25 +50,11 @@ const Home = () => {
                     </section>
                 }
 
-                <section className="advertisement-2">
-                    <div></div>
-                {
-                    picPaths && 
-
-                    picPaths.all?.map((pic, index) => (
-
-
-                        Array(5).fill(1).map(() => 
-                        Math.round(Math.random() * picPaths.all.length)).includes(index) &&
-                            <img key={index} src={pic} alt={pic} />
-                    ))
-                }
-                </section>
                 {
                     picPaths && ranNum &&
 
                     Array(5).fill(1).map(() => 
-                        Math.round(Math.random() * picPaths.all.length))
+                        Math.round(Math.random() * picPaths.all.length - 1))
 
                     .map((num, index) => (
                         <section className="advertisement-bottom" key={index}>

@@ -1,7 +1,13 @@
 import './App.css'
 import { BrowserRouter, Routes, Route , Link, Outlet} from 'react-router-dom';
 import { useRef, useEffect, useReducer, createContext } from 'react';
+
 import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Login from './components/Login';
+import ShoppingCart from './components/ShoppingCart';
+
 import Cars from './components/products/Cars';
 import Electronics from './components/products/Electronics';
 import Clothes from './components/products/Clothes';
@@ -49,10 +55,10 @@ const Layout = () => {
       <nav className='main-nav'>
         <Link onClick={setNavBack} to="/">Home</Link>
         <Link onClick={showProductsNav}>Products</Link>
-        <Link onClick={setNavBack}>About</Link>
-        <Link onClick={setNavBack}>Contact</Link>
-        <Link onClick={setNavBack}>Login</Link>
-        <Link>
+        <Link to='/about' onClick={setNavBack}>About</Link>
+        <Link to='/contact' onClick={setNavBack}>Contact</Link>
+        <Link to='/login' onClick={setNavBack}>Login</Link>
+        <Link to='/shopping-cart'>
         <svg className='shopping-cart-logo' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 3H4.37144C5.31982 3 6.13781 3.66607 6.32996 4.59479L8.67004 15.9052C8.86219 16.8339 9.68018 17.5 10.6286 17.5H17.5" stroke="#000000"
             // stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -106,6 +112,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />}/>
+            <Route path='/about' element={<About />}/>
+            <Route path='/contact' element={<Contact />}/>
+            <Route path='/login' element={<Login />}/>
+            <Route path='/shopping-cart' element={<ShoppingCart />}/>
             <Route path='/cars' element={<Cars />}/>
             <Route path='/electronics' element={<Electronics />}/>
             <Route path='/clothes' element={<Clothes />}/>
